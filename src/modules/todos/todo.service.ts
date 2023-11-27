@@ -55,7 +55,7 @@ export class TodoService {
 
   async delete(user: UserEntity, id: string): Promise<CommonSuccessResDto> {
     await this.getTodo(id, user);
-    await this.todoRepository.deleteTodo(user, id);
+    await this.todoRepository.deleteTodo(id);
 
     return { success: true };
   }

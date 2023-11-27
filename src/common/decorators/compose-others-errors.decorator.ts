@@ -1,9 +1,5 @@
 import { applyDecorators } from '@nestjs/common';
-import {
-  ApiBadRequestResponse,
-  ApiForbiddenResponse,
-  ApiNotFoundResponse,
-} from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiNotFoundResponse } from '@nestjs/swagger';
 
 import { CommonServerErrorResDto } from '../dto/common-server-error-res.dto';
 import { EErrors } from 'src/common/constants/errors.enum';
@@ -14,13 +10,6 @@ import { EErrors } from 'src/common/constants/errors.enum';
 export function ComposeOthersErrorsDecorator(...errorResponses: EErrors[]) {
   const type = CommonServerErrorResDto;
   const decorators = errorResponses.map((errorResponse) => {
-    if (errorResponse === EErrors.FORBIDDEN_ERROR) {
-      return ApiForbiddenResponse({
-        type,
-        description: EErrors.FORBIDDEN_ERROR,
-      });
-    }
-
     if (errorResponse === EErrors.NOT_FOUND_ERROR) {
       return ApiNotFoundResponse({
         type,

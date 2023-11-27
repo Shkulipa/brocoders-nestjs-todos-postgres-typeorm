@@ -50,7 +50,7 @@ export class TodoRepository extends BaseRepository<TodoEntity> {
     return await this.todoRepository.update({ id, user }, updateTodoReqDto);
   }
 
-  async deleteTodo(user: UserEntity, id: string) {
+  async deleteTodo(id: string) {
     return await this.todoRepository.delete(id);
   }
 }

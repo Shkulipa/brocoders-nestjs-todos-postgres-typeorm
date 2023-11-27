@@ -8,31 +8,22 @@ import { UserTokenDataDto } from 'src/common/dto/user-token-data.dto';
 export class TokenService {
   constructor(private readonly configService: ConfigService) {}
 
-  private verifyToken(token: string, secret: string) {
+  verifyAccessToken(token: string) {
     try {
-      const decoded = verify(token, secret);
+      const SECRET_ACCESS = this.configService.get<string>(
+        EEnvVariables.SECRET_ACCESS,
+      );
+      const decoded = verify(token, SECRET_ACCESS);
       return decoded;
     } catch (err) {
       if (err instanceof TokenExpiredError) {
-        // Refresh token has expired
+        // Token has expired
         throw new UnauthorizedException(
           'Your Session has expired, please login again',
         );
       }
 
       throw new UnauthorizedException(err.message);
-    }
-  }
-
-  verifyAccessToken(token: string) {
-    try {
-      const SECRET_ACCESS = this.configService.get<string>(
-        EEnvVariables.SECRET_ACCESS,
-      );
-      const decoded = this.verifyToken(token, SECRET_ACCESS);
-      return decoded;
-    } catch (err) {
-      throw err;
     }
   }
 
