@@ -5,11 +5,11 @@ import {
   MaxLength,
   ValidateNested,
 } from 'class-validator';
-import { IdDto } from 'src/common/dto/id.dto';
+import { IdDbDto } from 'src/common/dto/id-db.dto';
 import { TodoItemDto } from './todo-item.dto';
 import { Type } from 'class-transformer';
 
-export class TodoDbDto extends IdDto {
+export class TodoDbDto extends IdDbDto {
   @ApiProperty({
     required: true,
     type: String,
