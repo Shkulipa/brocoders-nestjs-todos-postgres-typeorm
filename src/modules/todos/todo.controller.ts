@@ -21,7 +21,7 @@ import { User } from 'src/common/decorators/user.decorator';
 import { UserEntity } from 'src/services/repositories/user/entities/user.entity';
 import { QueryGetTodoReqDto } from './dto/get-todo-req.dto';
 import { CommonPathReqDto } from 'src/common/dto/common-path-req.dto';
-import { GetTodosResDto } from 'src/services/repositories/todo/dto/get-todos-res.dto';
+import { GetTodosResDto } from 'src/modules/todos/dto/get-todos-res.dto';
 import { UpdateTodoReqDto } from './dto/update-todo-req.dto';
 import { ComposeAuthDecorator } from 'src/common/decorators/compose-auth.decorator';
 

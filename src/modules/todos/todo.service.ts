@@ -4,7 +4,7 @@ import { CreateTodoReqDto } from './dto/create-todo-req.dto';
 import { UserEntity } from 'src/services/repositories/user/entities/user.entity';
 import { QueryGetTodoReqDto } from './dto/get-todo-req.dto';
 import { TodoRepository } from 'src/services/repositories/todo/todo.repository';
-import { GetTodosResDto } from 'src/services/repositories/todo/dto/get-todos-res.dto';
+import { GetTodosResDto } from 'src/modules/todos/dto/get-todos-res.dto';
 import { UpdateTodoReqDto } from './dto/update-todo-req.dto';
 
 @Injectable()

@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString, IsNotEmpty } from 'class-validator';
 
-export class IdDto {
+export class IdDbDto {
   @ApiProperty({ required: true, type: String })
   @IsString()
   @IsNotEmpty()
