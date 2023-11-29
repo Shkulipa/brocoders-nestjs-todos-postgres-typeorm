@@ -2,9 +2,9 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty } from 'class-validator';
 import Password from 'src/common/decorators/password.decorator';
 import Trim from 'src/common/decorators/trim.decorator';
-import { IdDto } from 'src/common/dto/id.dto';
+import { IdDbDto } from 'src/common/dto/id-db.dto';
 
-export class UsersDbDto extends IdDto {
+export class UsersDbDto extends IdDbDto {
   @ApiProperty({
     required: true,
     type: String,
